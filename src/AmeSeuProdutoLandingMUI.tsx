@@ -6,7 +6,6 @@ import {
   Container,
   Box,
   Typography,
-  Grid,
   TextField,
   Card,
   CardContent,
@@ -19,6 +18,7 @@ import {
   AccordionDetails,
   Fab,
 } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2"; // Grid v2 (sem 'item')
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -66,7 +66,7 @@ export default function AmeSeuProdutoLandingMUI() {
       {/* HERO */}
       <Container id="home" sx={{ pt: { xs: 6, md: 10 }, pb: { xs: 6, md: 12 } }}>
         <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid xs={12} md={6}>
             <Stack spacing={3}>
               <Typography variant="h2" fontWeight={800} lineHeight={1.1} sx={{ fontSize: { xs: 36, md: 48 } }}>
                 Descubra o propósito do seu negócio e {" "}
@@ -87,7 +87,7 @@ export default function AmeSeuProdutoLandingMUI() {
               {/* Captura de lead */}
               <Box component="form" onSubmit={handleLead} sx={{ mt: 1, maxWidth: 600 }}>
                 <Grid container spacing={1}>
-                  <Grid item xs={12} sm>
+                  <Grid xs={12} sm>
                     <TextField
                       type="email"
                       required
@@ -97,7 +97,7 @@ export default function AmeSeuProdutoLandingMUI() {
                       label="Seu melhor e-mail para receber o presente"
                     />
                   </Grid>
-                  <Grid item xs={12} sm="auto">
+                  <Grid xs={12} sm="auto">
                     <Button type="submit" variant="outlined" sx={{ height: "100%", borderRadius: 2 }}>
                       Quero o presente
                     </Button>
@@ -108,7 +108,7 @@ export default function AmeSeuProdutoLandingMUI() {
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid xs={12} md={6}>
             <Box sx={{ position: "relative", display: "flex", justifyContent: { xs: "center", md: "flex-end" } }}>
               <Paper elevation={8} sx={{ width: { xs: 260, md: 320 }, aspectRatio: "3/4", borderRadius: 4, p: 3, border: 1, borderColor: "#ffe4e6", bgcolor: "#fff" }}>
                 <Box sx={{ height: "100%", borderRadius: 3, p: 3, bgcolor: "linear-gradient(135deg,#fecdd3,#fff,#fff)" }}>
@@ -141,7 +141,7 @@ export default function AmeSeuProdutoLandingMUI() {
               { title: "Conteúdo que conecta", desc: "Ideias de posts e stories que geram conversa e confiança." },
               { title: "Comunidade e relacionamento", desc: "Como cultivar clientes fiéis que indicam seu trabalho." },
             ].map((b) => (
-              <Grid item xs={12} md={4} key={b.title}>
+              <Grid xs={12} md={4} key={b.title}>
                 <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, bgcolor: "#fff0f3" }}>
                   <Typography variant="subtitle1" fontWeight={700}>{b.title}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>{b.desc}</Typography>
@@ -160,7 +160,7 @@ export default function AmeSeuProdutoLandingMUI() {
       {/* AMOSTRA */}
       <Container id="amostra" sx={{ py: 10 }}>
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid xs={12} md={6}>
             <Stack spacing={2}>
               <Typography variant="h3" fontWeight={800} sx={{ fontSize: { xs: 28, md: 36 } }}>Amostra gratuita</Typography>
               <Typography color="text.secondary">Baixe um trecho do e-book e veja a linguagem simples e afetuosa na prática.</Typography>
@@ -170,7 +170,7 @@ export default function AmeSeuProdutoLandingMUI() {
               </Stack>
             </Stack>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid xs={12} md={6}>
             <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
               <Stack component="ul" spacing={1} sx={{ pl: 2, m: 0 }}>
                 <Typography component="li" variant="body2" color="text.secondary">Linguagem simples, direta e cheia de afeto.</Typography>
@@ -186,10 +186,10 @@ export default function AmeSeuProdutoLandingMUI() {
       <Box id="autora" sx={{ bgcolor: "#fff", py: 10, borderTop: 1, borderColor: "divider" }}>
         <Container>
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={5}>
+            <Grid xs={12} md={5}>
               <Paper variant="outlined" sx={{ borderRadius: 4, p: 0, aspectRatio: "1 / 1", bgcolor: "#ffe4e6" }} />
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid xs={12} md={7}>
               <Typography variant="h3" fontWeight={800} sx={{ fontSize: { xs: 28, md: 36 } }}>Prazer, Dila Vieira</Typography>
               <Typography color="text.secondary" sx={{ mt: 2 }}>
                 Empreendedora por propósito e maternidade. Conhecida como <strong>Dila Lingerie</strong>, compartilho minha jornada real de construção de um negócio com coração e resultados.
@@ -212,7 +212,7 @@ export default function AmeSeuProdutoLandingMUI() {
             { name: "Karina M.", text: "Leitura leve e prática. Em dois dias já estava aplicando as ideias nos stories." },
             { name: "Bianca R.", text: "É como conversar com uma amiga que empreende de verdade. Recomendo!" },
           ].map((d) => (
-            <Grid item xs={12} md={4} key={d.name}>
+            <Grid xs={12} md={4} key={d.name}>
               <Card variant="outlined" sx={{ borderRadius: 3, height: "100%" }}>
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">“{d.text}”</Typography>
@@ -236,7 +236,7 @@ export default function AmeSeuProdutoLandingMUI() {
               { q: "Qual o público ideal?", a: "Pessoas que querem empreender com verdade, clareza e propósito, começando do zero ou recomeçando." },
               { q: "Vem com bônus?", a: "Você recebe um checklist prático por e-mail para aplicar hoje mesmo." },
             ].map((f) => (
-              <Grid item xs={12} md={6} key={f.q}>
+              <Grid xs={12} md={6} key={f.q}>
                 <Accordion disableGutters sx={{ borderRadius: 2, boxShadow: "none", border: 1, borderColor: "divider" }}>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}> 
                     <Typography fontWeight={700}>{f.q}</Typography>
@@ -260,10 +260,10 @@ export default function AmeSeuProdutoLandingMUI() {
       <Box component="footer" sx={{ borderTop: 1, borderColor: "divider", bgcolor: "#fff" }}>
         <Container sx={{ py: 3 }}>
           <Grid container spacing={2} alignItems="center">
-            <Grid item xs={12} md={6}>
+            <Grid xs={12} md={6}>
               <Typography variant="body2" color="text.secondary">© {new Date().getFullYear()} Ame Seu Produto — Todos os direitos reservados.</Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid xs={12} md={6}>
               <Stack direction="row" spacing={3} justifyContent={{ xs: "flex-start", md: "flex-end" }}>
                 <MUILink href={instagram} underline="hover" sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
                   <InstagramIcon fontSize="small" /> Instagram
